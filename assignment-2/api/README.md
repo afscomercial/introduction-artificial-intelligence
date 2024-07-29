@@ -1,7 +1,7 @@
 
 # Introduction to Artificial Intelligence
 Traffic Collision API
-
+https://introduction-artificial-intelligence.onrender.com
 
 ### dependencies
 
@@ -49,3 +49,4 @@ uvicorn main:app --reload
 ### Swagger - OpenAPI
 
 url
+https://introduction-artificial-intelligence.onrender.com/docs
