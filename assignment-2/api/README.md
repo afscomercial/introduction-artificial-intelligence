@@ -23,7 +23,7 @@ git push origin main
 
 create a virtual environment
 ```bash
-python3 -m venv env
+python -m venv env
 ```
 
 activate the virtual environment
