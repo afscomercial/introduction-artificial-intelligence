@@ -1,5 +1,5 @@
 from fastapi import HTTPException, Request
-from jose import JWTError
+#from jose import JWTError
 
 PREDICTIONS = [
     {"id": "1", "type": "two_bedroom", "city": "toronto", "prediction": "2400", "complete": False},
@@ -16,5 +16,5 @@ async def read_prediction(prediction_id: str):
         for prediction in PREDICTIONS:
             if prediction.get("id").casefold() == prediction_id.casefold():
                 return prediction
-    except JWTError:
+    except Exception:
         raise HTTPException(status_code=404, detail="Not found")
