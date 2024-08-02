@@ -46,6 +46,11 @@ run uviorn
 uvicorn main:app --reload
 ```
 
+for local development create a .env file at the root level with the following content
+```bash
+MODEL_PATH=your_model_path
+```
+
 ### Swagger - OpenAPI
 
 url
