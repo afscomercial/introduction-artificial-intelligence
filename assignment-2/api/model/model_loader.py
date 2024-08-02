@@ -34,11 +34,16 @@ class ModelLoader(object):
         """
         Predict data using model
         """
-        predictions =  self.model.predict(data)
-        predictions = predictions.tolist()
-        if self.labels:
-            predictions = [self.labels[np.argmax(prediction)] for prediction in predictions]
-        return predictions
+        # Add a batch dimension to the input
+        test_sample_expanded = np.expand_dims(data[0], axis=0)
+        # Make prediction
+        y_pred = (self.model.predict(test_sample_expanded) > 0.5).astype("int32")
+        # Get the predicted class index
+        predicted_index = y_pred[0][0]
+        # Map the predicted index to the class label
+        predicted_class = self.labels[predicted_index]
+
+        return predicted_class
         
 model_path = os.getenv('MODEL_PATH')
 
