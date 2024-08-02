@@ -1,12 +1,15 @@
+import os
 from fastapi import Body, APIRouter, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from controllers.predictions import predict
+from dotenv import load_dotenv
 
 
+load_dotenv()
 router = APIRouter()
-
+current_directory = os.path.dirname(os.path.abspath(__file__))
 
 templates = Jinja2Templates(directory="templates")
 
@@ -14,7 +17,7 @@ templates = Jinja2Templates(directory="templates")
 @router.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
-        "home.html", {"request": request, "prediction": None}
+        "home.html", {"request": request, "prediction": None, "path": os.getenv('MODEL_PATH'), "current_directory": current_directory}
     )
 
 
@@ -59,5 +62,5 @@ async def predictions(
         northYork,
     )
     return templates.TemplateResponse(
-        "home.html", {"request": request, "prediction": prediction}
+        "home.html", {"request": request, "prediction": prediction, "path": os.getenv('MODEL_PATH'), "current_directory": current_directory}
     )
