@@ -1,0 +1,32 @@
+INJURY : ['No'=0, 'Minimal'=1, 'Minor'=2, 'Major'=3, 'Fatal'=4] 
+INVAGE: ['Unknown'=0, 'Children'=1, 'Adults'=2, 'Seniors'=3] 
+PASSENGER: ['Yes'=1, 'No'=0] 
+SPEEDING: ['Yes' 'No'] 
+TRUCK: ['No' 'Yes'] 
+'TRAFFCTL_No Control': ['No' 'Yes'] 
+'LIGHT_Natural Light': ['No' 'Yes'] 
+'LIGHT_Dark': ['No' 'Yes'] 
+'ALCOHOL': ['No' 'Yes'] 
+'TRAFFCTL_Automated Control': ['No' 'Yes'] 
+'DISTRICT_Scarborough': ['No' 'Yes'] 
+'DISTRICT_Toronto and East York': ['No' 'Yes'] 
+'DISTRICT_Etobicoke York': ['No' 'Yes'] 
+'TRSN_CITY_VEH': ['No' 'Yes'] 
+'REDLIGHT': ['No' 'Yes'] 
+'LIGHT_Artificial Light': ['No' 'Yes'] 
+'DISTRICT_North York':['No' 'Yes'] 
+
+From this: DISTRICT_X (10, 11, 12, 16) belong to a same class for multiple choice. When choosing one, that will be =1 and the others are = 0:
+unique value number in DISTRICT : 4 
+unique value in DISTRICT: ['Toronto and East York' 'North York' 'Scarborough' 'Etobicoke York'] 
+
+Same for 
+unique value number in TRAFFCTL_X : 5 
+unique value in TRAFFCTL: ['No Control' 'Automated Control'] 
+
+and same for:
+unique value number in LIGHT : 4 
+unique value in LIGHT: ['Dark' 'Artificial Light' 'Natural Light'] 
+
+Numbers of the feature determine index in numpy array:
+[0= INJURY, 1=INVAGE, 2=PASSENGER, 3=SPEEDING, etc.]
