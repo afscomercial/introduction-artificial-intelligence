@@ -2,7 +2,7 @@ from fastapi import Body, APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from controllers.predictions import PREDICTIONS, read_prediction
+from controllers.predictions import PREDICTIONS, read_prediction, predict
 
 
 router = APIRouter()
@@ -37,7 +37,8 @@ async def edit_prediction(request: Request, prediction_id: int):
 
 @router.get("/predictions")
 async def read_all_predictions():
-    return PREDICTIONS
+    predictions = await predict()
+    return predictions
 
 
 @router.get("/prediction/{prediction_id}")
@@ -45,13 +46,13 @@ async def read_prediction(prediction_id: str):
     return read_prediction(prediction_id)
 
 
-@router.get("/predictions/")
-async def read_type_by_query(type: str):
-    predictions_to_return = []
-    for prediction in PREDICTIONS:
-        if prediction.get("type").casefold() == type.casefold():
-            predictions_to_return.append(prediction)
-    return predictions_to_return
+# @router.get("/predictions/")
+# async def read_type_by_query(type: str):
+#     predictions_to_return = []
+#     for prediction in PREDICTIONS:
+#         if prediction.get("type").casefold() == type.casefold():
+#             predictions_to_return.append(prediction)
+#     return predictions_to_return
 
 
 # Get all predictions from a specific city using path or query parameters
