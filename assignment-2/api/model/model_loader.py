@@ -1,7 +1,11 @@
+import os
 import typing
 from pathlib import Path
 import numpy as np
 import tensorflow as tf
+from dotenv import load_dotenv
+
+load_dotenv() # take environment variables from .env.
 
 class ModelLoader(object):
     def __init__(self, 
@@ -36,22 +40,11 @@ class ModelLoader(object):
             predictions = [self.labels[np.argmax(prediction)] for prediction in predictions]
         return predictions
         
-
+model_path = os.getenv('MODEL_PATH')
 
 model_loader = ModelLoader(
-        path='./my_model.keras', 
+        path=model_path,
         name='fatal_or_not_fatal', 
         version=1.0, 
         labels=['Non-Fatal Injury', 'Fatal']
 )
-
-
-    
-    #['INJURY', 'INVAGE', 'PASSENGER', 'SPEEDING', 'TRUCK', 'TRAFFCTL_No Control', 'LIGHT_Natural Light', 
-    # 'LIGHT_Dark', 'ALCOHOL', 'TRAFFCTL_Automated Control', 'DISTRICT_Scarborough', 'DISTRICT_Toronto and East York', 
-    # 'DISTRICT_Etobicoke York', 'TRSN_CITY_VEH', 'REDLIGHT', 'LIGHT_Artificial Light','DISTRICT_North York']
-    
-    # features = np.array([
-        # 0 = Non-Fatal Injury
-    #     [3., 2., 0., 0., 0., 0., 1., 0., 0., 1., 1., 0., 0., 0., 0., 0., 0.]
-    # ])
