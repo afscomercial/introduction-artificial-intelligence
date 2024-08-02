@@ -9,475 +9,154 @@
 				Fill out the form below to get predictions on traffic collisions.
 			</p>
 
-			<form action="/predictions" method="post">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">Parameter</th>
-							<th scope="col">Options</th>
-						</tr>
-					</thead>
-					<tbody>
-						<!-- INJURY -->
-						<tr>
-							<td>Injury</td>
-							<td>
-								<select name="injury" class="form-control">
-									<option value="0">No</option>
-									<option value="1">Minimal</option>
-									<option value="2">Minor</option>
-									<option value="3">Major</option>
-									<option value="4">Fatal</option>
-								</select>
-							</td>
-						</tr>
-						<!-- INVAGE -->
-						<tr>
-							<td>Invage</td>
-							<td>
-								<select name="invage" class="form-control">
-									<option value="0">Unknown</option>
-									<option value="1">Children</option>
-									<option value="2">Adults</option>
-									<option value="3">Seniors</option>
-								</select>
-							</td>
-						</tr>
-						<!-- PASSENGER -->
-						<tr>
-							<td>Passenger</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="passenger"
-										id="passenger-yes"
-										value="1"
-										checked
-									/>
-									<label class="form-check-label" for="passenger-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="passenger"
-										id="passenger-no"
-										value="0"
-									/>
-									<label class="form-check-label" for="passenger-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- SPEEDING -->
-						<tr>
-							<td>Speeding</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="speeding"
-										id="speeding-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="speeding-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="speeding"
-										id="speeding-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="speeding-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- TRUCK -->
-						<tr>
-							<td>Truck</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="truck"
-										id="truck-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="truck-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="truck"
-										id="truck-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="truck-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- TRAFFCTL_No Control -->
-						<tr>
-							<td>Traffic Control No Control</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="traffctl"
-										id="traffctl-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="traffctl-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="traffctl"
-										id="traffctl-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="traffctl-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- LIGHT_Natural Light -->
-						<tr>
-							<td>Light Natural Light</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightNatural"
-										id="lightNatural-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="lightNatural-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightNatural"
-										id="lightNatural-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="lightNatural-no"
-										>No</label
-									>
-								</div>
-							</td>
-						</tr>
-						<!-- LIGHT_Dark -->
-						<tr>
-							<td>Light Dark</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightDark"
-										id="lightDark-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="lightDark-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightDark"
-										id="lightDark-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="lightDark-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- ALCOHOL -->
-						<tr>
-							<td>Alcohol</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="alcohol"
-										id="alcohol-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="alcohol-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="alcohol"
-										id="alcohol-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="alcohol-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- TRAFFCTL_Automated Control -->
-						<tr>
-							<td>Traffic Control Automated</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="traffctlAutomated"
-										id="traffctlAutomated-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="traffctlAutomated-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="traffctlAutomated"
-										id="traffctlAutomated-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="traffctlAutomated-no"
-										>No</label
-									>
-								</div>
-							</td>
-						</tr>
-						<!-- DISTRICT_Scarborough -->
-						<tr>
-							<td>District Scarborough</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="scarborough"
-										id="scarborough-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="scarborough-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="scarborough"
-										id="scarborough-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="scarborough-no"
-										>No</label
-									>
-								</div>
-							</td>
-						</tr>
-						<!-- DISTRICT_Toronto and East York -->
-						<tr>
-							<td>District Toronto and East York</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="toronto"
-										id="toronto-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="toronto-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="toronto"
-										id="toronto-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="toronto-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- DISTRICT_Etobicoke York -->
-						<tr>
-							<td>District Etobicoke York</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="etobicoke"
-										id="etobicoke-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="etobicoke-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="etobicoke"
-										id="etobicoke-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="etobicoke-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- TRSN_CITY_VEH -->
-						<tr>
-							<td>TRSN City Vehicle</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="trsnCity"
-										id="trsnCity-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="trsnCity-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="trsnCity"
-										id="trsnCity-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="trsnCity-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- REDLIGHT -->
-						<tr>
-							<td>Red Light</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="redlight"
-										id="redlight-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="redlight-yes">Yes</label>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="redlight"
-										id="redlight-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="redlight-no">No</label>
-								</div>
-							</td>
-						</tr>
-						<!-- LIGHT_Artificial Light -->
-						<tr>
-							<td>Light Artificial Light</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightArtificial"
-										id="lightArtificial-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="lightArtificial-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="lightArtificial"
-										id="lightArtificial-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="lightArtificial-no"
-										>No</label
-									>
-								</div>
-							</td>
-						</tr>
-						<!-- DISTRICT_North York -->
-						<tr>
-							<td>District North York</td>
-							<td>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="northYork"
-										id="northYork-yes"
-										value="Yes"
-										checked
-									/>
-									<label class="form-check-label" for="northYork-yes"
-										>Yes</label
-									>
-								</div>
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="radio"
-										name="northYork"
-										id="northYork-no"
-										value="No"
-									/>
-									<label class="form-check-label" for="northYork-no">No</label>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<form method="post" action="/predictions">
+				<!-- INJURY Dropdown -->
+				<div class="form-group">
+					<label for="injury">Injury</label>
+					<select class="form-control" id="injury" name="injury" required>
+						<option value="0">No</option>
+						<option value="1">Minimal</option>
+						<option value="2">Minor</option>
+						<option value="3">Major</option>
+						<option value="4">Fatal</option>
+					</select>
+				</div>
+
+				<!-- INVAGE Dropdown -->
+				<div class="form-group">
+					<label for="invage">Age of Involved Person</label>
+					<select class="form-control" id="invage" name="invage" required>
+						<option value="0">Unknown</option>
+						<option value="1">Children</option>
+						<option value="2">Adults</option>
+						<option value="3">Seniors</option>
+					</select>
+				</div>
+
+				<!-- Passenger -->
+				<div class="form-group">
+					<label>Passenger:</label><br />
+					<input type="radio" id="passenger_yes" name="passenger" value="1.0" />
+					<label for="passenger_yes">Yes</label>
+					<input type="radio" id="passenger_no" name="passenger" value="0.0" />
+					<label for="passenger_no">No</label>
+				</div>
+
+				<!-- Speeding -->
+				<div class="form-group">
+					<label>Speeding:</label><br />
+					<input type="radio" id="speeding_yes" name="speeding" value="1.0" />
+					<label for="speeding_yes">Yes</label>
+					<input type="radio" id="speeding_no" name="speeding" value="0.0" />
+					<label for="speeding_no">No</label>
+				</div>
+
+				<!-- Truck -->
+				<div class="form-group">
+					<label>Truck:</label><br />
+					<input type="radio" id="truck_yes" name="truck" value="1.0" />
+					<label for="truck_yes">Yes</label>
+					<input type="radio" id="truck_no" name="truck" value="0.0" />
+					<label for="truck_no">No</label>
+				</div>
+
+				<!-- Traffctl -->
+				<div class="form-group">
+					<label>Traffic Control:</label><br />
+					<input
+						type="radio"
+						id="traffctl_no_control"
+						name="traffctl"
+						value="no_control"
+					/>
+					<label for="traffctl_no_control">No Control</label>
+					<input
+						type="radio"
+						id="traffctl_automated"
+						name="traffctl"
+						value="automated"
+					/>
+					<label for="traffctl_automated">Automated</label>
+				</div>
+
+				<!-- Light -->
+				<div class="form-group">
+					<label>Light:</label><br />
+					<input type="radio" id="light_natural" name="light" value="natural" />
+					<label for="light_natural">Natural</label>
+					<input type="radio" id="light_dark" name="light" value="dark" />
+					<label for="light_dark">Dark</label>
+					<input
+						type="radio"
+						id="light_artificial"
+						name="light"
+						value="artificial"
+					/>
+					<label for="light_artificial">Artificial</label>
+				</div>
+
+				<!-- Alcohol -->
+				<div class="form-group">
+					<label>Alcohol:</label><br />
+					<input type="radio" id="alcohol_yes" name="alcohol" value="1.0" />
+					<label for="alcohol_yes">Yes</label>
+					<input type="radio" id="alcohol_no" name="alcohol" value="0.0" />
+					<label for="alcohol_no">No</label>
+				</div>
+
+				<!-- Districts -->
+				<div class="form-group">
+					<label>District:</label><br />
+					<input
+						type="radio"
+						id="district_scarborough"
+						name="district"
+						value="scarborough"
+					/>
+					<label for="district_scarborough">Scarborough</label>
+					<input
+						type="radio"
+						id="district_toronto"
+						name="district"
+						value="toronto"
+					/>
+					<label for="district_toronto">Toronto</label>
+					<input
+						type="radio"
+						id="district_etobicoke"
+						name="district"
+						value="etobicoke"
+					/>
+					<label for="district_etobicoke">Etobicoke</label>
+					<input
+						type="radio"
+						id="district_northYork"
+						name="district"
+						value="northYork"
+					/>
+					<label for="district_northYork">North York</label>
+				</div>
+
+				<!-- TRSN -->
+				<div class="form-group">
+					<label>TRSN:</label><br />
+					<input type="radio" id="trsn_yes" name="trsn" value="1.0" />
+					<label for="trsn_yes">Yes</label>
+					<input type="radio" id="trsn_no" name="trsn" value="0.0" />
+					<label for="trsn_no">No</label>
+				</div>
+
+				<!-- Red Light -->
+				<div class="form-group">
+					<label>Red Light:</label><br />
+					<input type="radio" id="redlight_yes" name="redlight" value="1.0" />
+					<label for="redlight_yes">Yes</label>
+					<input type="radio" id="redlight_no" name="redlight" value="0.0" />
+					<label for="redlight_no">No</label>
+				</div>
 
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
-			
 
 			{% if prediction %}
 			<div class="alert alert-info mt-4">
@@ -489,8 +168,8 @@
 	</div>
 </div>
 <div>
-	<p>{{path}}</p>
-</div> 
+	<p class="px-2 py-2 text-muted small">env path={{path}}</p>
+</div>
 <div>
-	<p>{{current_directory}}</p>
-</div> 
+	<p class="px-2 text-muted small">current path={{current_directory}}</p>
+</div>
