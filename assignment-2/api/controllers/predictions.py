@@ -1,5 +1,5 @@
 from fastapi import HTTPException, Request
-# from model.model_loader import model_loader
+from model.model_loader import model_loader
 import numpy as np
 
 
@@ -47,7 +47,7 @@ async def predict(
                 ]
             ]
         )
-        # prediction = model_loader.predict(features)[0]
-        return []
+        prediction = model_loader.predict(features)[0]
+        return prediction
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
