@@ -1881,11 +1881,11 @@ OBJECTID,ACCLASS
 16880,Non-Fatal Injury
 16881,Non-Fatal Injury
 16882,Non-Fatal Injury
-16883,Fatal
-16884,Fatal
-16885,Fatal
-16886,Fatal
-16887,Fatal
+16883,Non-Fatal Injury
+16884,Non-Fatal Injury
+16885,Non-Fatal Injury
+16886,Non-Fatal Injury
+16887,Non-Fatal Injury
 16888,Non-Fatal Injury
 16889,Non-Fatal Injury
 16890,Non-Fatal Injury
@@ -2256,8 +2256,8 @@ OBJECTID,ACCLASS
 17255,Non-Fatal Injury
 17256,Non-Fatal Injury
 17257,Fatal
-17258,Non-Fatal Injury
-17259,Non-Fatal Injury
+17258,Fatal
+17259,Fatal
 17260,Non-Fatal Injury
 17261,Non-Fatal Injury
 17262,Non-Fatal Injury
@@ -2565,7 +2565,7 @@ OBJECTID,ACCLASS
 17564,Non-Fatal Injury
 17565,Non-Fatal Injury
 17566,Non-Fatal Injury
-17567,Fatal
+17567,Non-Fatal Injury
 17568,Non-Fatal Injury
 17569,Non-Fatal Injury
 17570,Non-Fatal Injury
@@ -3445,7 +3445,7 @@ OBJECTID,ACCLASS
 18444,Non-Fatal Injury
 18445,Non-Fatal Injury
 18446,Non-Fatal Injury
-18447,Fatal
+18447,Non-Fatal Injury
 18448,Non-Fatal Injury
 18449,Non-Fatal Injury
 18450,Non-Fatal Injury
@@ -3803,7 +3803,7 @@ OBJECTID,ACCLASS
 18803,Non-Fatal Injury
 18804,Non-Fatal Injury
 18805,Non-Fatal Injury
-18806,Fatal
+18806,Non-Fatal Injury
 18807,Non-Fatal Injury
 18808,Non-Fatal Injury
 18809,Non-Fatal Injury
